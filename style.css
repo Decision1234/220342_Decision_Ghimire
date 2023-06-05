@@ -1,125 +1,99 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #e3dbf6,#72fb76);
+    background: linear-gradient(135deg,#153677,#4e085f);
     padding: 10px;
 }
-.card{
-    width: 350px;
-    height: 515px;
-    margin: 100px auto 0;
-    perspective: 1000px;
-}
-.card-inner{
+.todo-app{
     width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 1s;
-    transform-style:preserve-3d ;
-
-}
-.front, .back{
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    position: absolute;
-    backface-visibility: hidden;
-}
-.front{
-    background: url(images/\TheMichael.webp);
-    background-size: cover;
-    background-position: center;
-    padding: 60px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    color: black;
-}
-.front h2{
-    font-weight: 500 ;
-}
-.front p{
-    color: rgb(86, 66, 66);
-    font-size: 13px;
-}
-
-.back{
+    max-width: 540px;
     background: white;
-    color: #333;
-    padding: 20px 40px;
-    transform:rotateY(180deg) ;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
 }
-.back h1{
-    font-size: 50px;
-    line-height: 55px;
-    margin-bottom: 10px;
+.todo-app h2{
+    color:#002765 ;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
-.back h1 span{
-    font-weight: 400;
-}
-.back p{
-    font-size: 14px;
-}
-.back p span{
-    font-weight: 600;
-}
-.back img{
-    width: 120px;
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
 }
 .row{
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+
 }
-.col{
+input{
     flex: 1;
-    text-align: center;
-    color: #555;
-    font-size: 12px;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
     position: relative;
 }
-.col::after{
+ul li::before{
     content: '';
-    width: 1.5px;
-    height: 20px;
-    background: #7800ad;
     position: absolute;
-    top: 5px;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.jpg);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+
+}
+ul li.checked::before{
+    background-image: url(images/checked.jpg);
+}
+ul li span{
+    position: absolute;
     right: 0;
-}
-.col:last-child::after{
-    display: none;
-}
-.back button{
-    background: #7800ad;
-    color: #fff;
-    border: 0;
-    outline: 0;
-    padding: 8px 25px;
-    border-radius: 30px;
-    font-size: 14px;
-    margin-right: 15px;
-    box-shadow: 0 8px 10px rgba(120,0,173,0.3);
-}
-.back a{
+    top: 5px;
     width: 40px;
     height: 40px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
     border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px;
 }
-.back a img{
-    width: 50%;
-}
-.card:hover .card-inner{
-    transform: rotateY(180deg);
+ul li span:hover{
+    background: #edeef0;
 }

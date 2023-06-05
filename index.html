@@ -1,46 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROFILE CARD</title>
+    <title>TO-DO LIST APP</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="card">
-        <div class="card-inner">
-          <div class="front">
-            <button>Decision Ghimire</button>
-          </div>
-          <div class="back">
-            <img src="images/12345.jpg" />
-            <h1>Decision <span> Ghimire</span></h1>
-            <p>
-              I am student currently studying at
-              <span>Softwarica College of IT & E-Commerce</span>
-            </p>
-            <div class="row">
-              <div class="col">
-                <h2>390</h2>
-                <p>Followers</p>
-              </div>
-              <div class="col">
-                <h2>291</h2>
-                <p>Following</p>
-              </div>
-              <div class="col">
-                <h2>25</h2>
-                <p>Post</p>
-              </div>
-            </div>
-            <div class="row">
-              <button>follow</button>
-              <a href="#"> <img src="images/ig.jpg" /></a>
-              <a href="#"> <img src="C:\Users\Decision\Desktop\Profile card\images\Untitled.png" /></a>
-            </div>
-          </div>
+      <div class="todo-app">
+        <h2>TO-DO LIST <img src="images/icon.jpg" /></h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Add your text" />
+          <button onclick="addTask()">ADD</button>
         </div>
+        <ul id="list-container">
+          <!--------<li class="checked">TASK 1</li>
+          <li>TASK 2</li>
+          <li>TASK 3</li>-->
+        </ul>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
